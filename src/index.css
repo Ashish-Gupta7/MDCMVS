@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.searchedSuggestion::-webkit-scrollbar {
+  width: 8px;
+}
+
+.searchedSuggestion::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 10px;
+}
+
+.searchedSuggestion::-webkit-scrollbar-thumb:hover {
+  background: #6556cd;
+}
