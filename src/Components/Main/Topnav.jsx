@@ -34,7 +34,12 @@ const Topnav = () => {
           id=""
           placeholder="search here..."
         />
-        {searchInput && <IoClose onClick={() => setSearchInput("")} />}
+        {searchInput && (
+          <IoClose
+            className="cursor-pointer"
+            onClick={() => setSearchInput("")}
+          />
+        )}
         <div className="searchedSuggestion absolute top-full mt-4 w-[150%] max-h-96 overflow-y-scroll">
           {searchedResults.map((elem, idx) => {
             return (
