@@ -8,6 +8,7 @@ const Home = () => {
       <Sidebar />
       <div className="w-[80%] h-full">
         <Topnav />
+        <h1>Hello New Branch</h1>
       </div>
     </div>
   );
