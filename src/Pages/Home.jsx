@@ -1,8 +1,8 @@
 import React from "react";
 import Sidebar from "../Components/Sidebar";
-import Topnav from "../Components/Home/Topnav";
 import Header from "../Components/Home/Header";
 import HorizontalCards from "../Components/Home/HorizontalCards";
+import SearchBar from "../Components/Home/SearchBar";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
         <Sidebar />
       </div>
       <div className="w-[80%] h-full overflow-y-auto">
-        <Topnav />
+        <SearchBar />
         <Header />
         <HorizontalCards />
       </div>

@@ -3,7 +3,7 @@ import { IoClose, IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { getSearchedResult } from "../../utils/API";
 
-const Topnav = () => {
+const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchedResults, setSearchedResults] = useState([]);
 
@@ -70,4 +70,4 @@ const Topnav = () => {
   );
 };
 
-export default Topnav;
+export default SearchBar;
