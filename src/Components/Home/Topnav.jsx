@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { IoClose, IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import axios from "../../utils/Axios";
+import { getSearchedResult } from "../../utils/API";
 
 const Topnav = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchedResults, setSearchedResults] = useState([]);
 
-  const getSearchedResult = async () => {
-    try {
-      const { data } = await axios.get(`/search/multi?query=${searchInput}`);
-      setSearchedResults(data.results);
-      console.log(searchedResults);
-    } catch (error) {
-      console.log("Error During Search Request:", error);
-    }
+  const resultsAfterSearch = async () => {
+    const { results } = await getSearchedResult(searchInput);
+    setSearchedResults(results);
   };
 
   useEffect(() => {
-    getSearchedResult();
+    resultsAfterSearch();
   }, [searchInput]);
 
   return (
     <div className="p-5">
-      <div className="relative w-max flex items-center gap-6 text-xl ml-40">
-        <IoSearch />
+      <div className="relative w-max flex items-center gap-6 text-xl ml-4">
+        <IoSearch className="text-2xl" />
         <input
           onChange={(e) => setSearchInput(e.target.value)}
           value={searchInput}
-          className="outline-none text-lg w-[420px] border px-4 py-3 rounded-md"
+          className="outline-none text-lg w-[420px] px-4 py-3 rounded-md"
           type="search"
           name=""
           id=""
@@ -40,7 +35,7 @@ const Topnav = () => {
             onClick={() => setSearchInput("")}
           />
         )}
-        <div className="searchedSuggestion absolute top-full mt-4 w-[150%] max-h-96 overflow-y-scroll">
+        <div className="searchedSuggestion absolute top-full mt-5 w-[150%] max-h-96 overflow-y-scroll">
           {searchedResults.map((elem, idx) => {
             return (
               <Link
