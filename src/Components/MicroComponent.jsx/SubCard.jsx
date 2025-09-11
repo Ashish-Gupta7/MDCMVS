@@ -23,21 +23,21 @@ const SubCard = ({ elem, currentSelection }) => {
   }
 
   return (
-    <div className="w-48 flex flex-col gap-4 shrink-0 mb-4">
+    <div className="w-48 flex flex-col shrink-0 mb-4">
       <div
-        className="w-full h-36 rounded-md bg-center bg-cover bg-no-repeat"
+        className="w-full h-36 rounded-md mb-4 bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${imagePath})` }}
       ></div>
-      <div>
-        <h1 className="text-base uppercase truncate">{title}</h1>
+      <h1 className="text-base uppercase truncate mb-2">{title}</h1>
+      <div className="flex justify-between items-center">
         {date && (
           <p className="text-xs text-gray-400">
             {new Date(date).getFullYear()}
           </p>
         )}
-        <p className="text-sm line-clamp-3">
+        <p className="text-sm">
           {description && description.length > 100 && (
-            <button className="text-blue-500 ml-1">more</button>
+            <button className="text-blue-500">more</button>
           )}
         </p>
       </div>

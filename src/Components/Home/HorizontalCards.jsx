@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import CustomSelect from "../MicroComponent.jsx/CustomSelect";
 import { getTrendingData } from "../../utils/API";
 import SubCard from "../MicroComponent.jsx/SubCard";
+import { CustomSelect } from "../MicroComponent.jsx/CustomSelect";
 
 const HorizontalCards = () => {
-  const [currentSelection, setCurrentSelection] = useState("all");
+  const [currentSelection, setCurrentSelection] = useState();
   const [data, setData] = useState([]);
+  const typeOptions = ["all", "movie", "tv", "person"];
 
   const selectedType = (val) => {
     setCurrentSelection(val);
@@ -23,7 +24,7 @@ const HorizontalCards = () => {
     <div className="p-8 overflow-hidden">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl uppercase">Trending</h2>
-        <CustomSelect selectedType={selectedType} />
+        <CustomSelect options={typeOptions} selectedType={selectedType} />
       </div>
       <div className="mt-10 overflow-x-auto flex gap-4">
         {data.map((elem, idx) => (

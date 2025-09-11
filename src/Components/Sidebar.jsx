@@ -14,9 +14,9 @@ const Sidebar = () => {
   const sidebarLinks = [
     { icon: FaFire, linkName: "Trending" },
     { icon: FaStar, linkName: "Popular" },
-    { icon: FaFilm, linkName: "Movies" },
-    { icon: FaTv, linkName: "TV Shows" },
-    { icon: FaUser, linkName: "People" },
+    { icon: FaFilm, linkName: "Movie" },
+    { icon: FaTv, linkName: "Tv" },
+    { icon: FaUser, linkName: "Person" },
   ];
   const sidebarLinksBottom = [
     { icon: FaInfoCircle, linkName: "About Us" },

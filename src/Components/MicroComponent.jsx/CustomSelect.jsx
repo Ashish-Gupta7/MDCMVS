@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const CustomSelect = ({ selectedType }) => {
-  const options = ["all", "movie", "tv", "person"];
-  const [selected, setSelected] = useState("all");
+const Dropdown = ({ options, defaultValue, onChange }) => {
+  const [selected, setSelected] = useState(defaultValue);
   const [open, setOpen] = useState(false);
 
   const dropdownSelect = (elem) => {
     setSelected(elem);
     setOpen(false);
-    selectedType(elem);
+    onChange(elem);
   };
 
   return (
@@ -53,4 +52,18 @@ const CustomSelect = ({ selectedType }) => {
   );
 };
 
-export default CustomSelect;
+export const CustomSelect = ({ selectedType, options }) => (
+  <Dropdown
+    options={options}
+    defaultValue={options[0]}
+    onChange={selectedType}
+  />
+);
+
+export const DurationSelect = ({ selectedDuration, options }) => (
+  <Dropdown
+    options={options}
+    defaultValue={options[0]}
+    onChange={selectedDuration}
+  />
+);

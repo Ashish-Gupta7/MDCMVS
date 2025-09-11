@@ -4,7 +4,7 @@ import Routing from "./utils/Routing";
 
 const App = () => {
   return (
-    <div className="w-screen min-h-screen bg-[#1f1e24] text-white">
+    <div className="w-full min-h-screen bg-[#1f1e24] text-white">
       <Navbar />
       <Routing />
     </div>
